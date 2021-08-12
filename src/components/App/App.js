@@ -4,7 +4,7 @@
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { blue } from '@material-ui/core/colors';
 import { CssBaseline, Grid } from '@material-ui/core';
 
@@ -13,7 +13,7 @@ import About from '../../pages/About';
 import Home from '../../pages/Home';
 import NotFound from '../../pages/NotFound';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: blue,
   },
