@@ -4,26 +4,20 @@
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
-import { blue } from '@material-ui/core/colors';
+import { ThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline, Grid } from '@material-ui/core';
 
-import Navigation from '../Navigation';
-import About from '../../pages/About';
-import Home from '../../pages/Home';
-import NotFound from '../../pages/NotFound';
-
-const theme = createTheme({
-  palette: {
-    primary: blue,
-  },
-});
+import baseTheme from './themes';
+import Navigation from './components/Navigation';
+import About from './pages/About';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
     <Router>
       <CssBaseline />
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={baseTheme}>
         <HelmetProvider>
           <Helmet titleTemplate="%s - React Boilerplate" />
           <Navigation />

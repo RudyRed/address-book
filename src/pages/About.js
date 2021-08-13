@@ -1,7 +1,3 @@
-/**
- * @file About page.
- */
-
 import { Helmet } from 'react-helmet-async';
 
 function About() {

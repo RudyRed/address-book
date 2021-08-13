@@ -1,18 +1,14 @@
-/**
- * @file Main entrypoint.
- */
-
 import ReactDOM from 'react-dom';
 
-import App from './components/App';
+import App from './App';
 
 const rootEl = document.getElementById('root');
 ReactDOM.render(<App />, rootEl);
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
+  module.hot.accept('./App', () => {
     // eslint-disable-next-line global-require
-    const NextApp = require('./components/App').default;
+    const NextApp = require('./App').default;
     ReactDOM.render(<NextApp />, rootEl);
   });
 }

@@ -1,7 +1,3 @@
-/**
- * @file Home page.
- */
-
 import { Helmet } from 'react-helmet-async';
 
 function Home() {
