@@ -15,9 +15,12 @@ jest.mock('react-router-dom', () => ({
     push: jest.fn(),
   }),
 }));
+jest.mock('react-helmet-async', () => ({
+  Helmet: () => <div />,
+}));
 
-describe('Navigation', () => {
-  it('Should render navigation', () => {
+describe('Home', () => {
+  it('Should render home', () => {
     render(<Home />);
 
     expect(screen.getByText('Hello World!')).toBeInTheDocument();
