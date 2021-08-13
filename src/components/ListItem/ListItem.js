@@ -1,17 +1,24 @@
 import T from 'prop-types';
-import MuiListItem from '@material-ui/core/ListItem';
+import {
+  Avatar,
+  ListItem as MuiListItem,
+  ListItemAvatar,
+  ListItemText,
+} from '@material-ui/core';
 
-import ListItemText from '@material-ui/core/ListItemText';
-
-const ListItem = ({ text }) => {
+const ListItem = ({ src, text }) => {
   return (
     <MuiListItem>
+      <ListItemAvatar>
+        <Avatar data-testid="Comp-ListItem-Avatar" src={src} />
+      </ListItemAvatar>
       <ListItemText primary={text} />
     </MuiListItem>
   );
 };
 
 ListItem.propTypes = {
+  src: T.string.isRequired,
   text: T.string.isRequired,
 };
 
