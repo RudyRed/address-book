@@ -6,9 +6,9 @@ import {
   ListItemText,
 } from '@material-ui/core';
 
-const ListItem = ({ src, text }) => {
+const ListItem = ({ src, text, ...props }) => {
   return (
-    <MuiListItem>
+    <MuiListItem {...props}>
       <ListItemAvatar>
         <Avatar data-testid="Comp-ListItem-Avatar" src={src} />
       </ListItemAvatar>
