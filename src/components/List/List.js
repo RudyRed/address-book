@@ -7,8 +7,14 @@ const List = ({ data }) => {
     <Paper elevation={4}>
       <MuiList>
         {data.map(({ src = 'Hello-World', text = 'Hello-World' }, i) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <ListItem src={src} text={text} key={i} />
+          <ListItem
+            src={src}
+            text={text}
+            // eslint-disable-next-line react/no-array-index-key
+            key={i}
+            to={`/${i}`}
+            data-testid={`List-ListItem-${i}`}
+          />
         ))}
       </MuiList>
     </Paper>

@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import List from './List';
 
@@ -26,7 +27,11 @@ const setup = (overrides) => {
     ...overrides,
   };
   return {
-    ...render(<List {...props} />),
+    ...render(
+      <Router>
+        <List {...props} />,
+      </Router>,
+    ),
     props,
   };
 };
@@ -37,6 +42,17 @@ describe('List', () => {
 
     props.data.forEach(({ text }) =>
       expect(getByText(text)).toBeInTheDocument(),
+    );
+  });
+
+  it('Should render ListItems with appropriate to prop', () => {
+    const { getByTestId, props } = setup();
+
+    props.data.forEach((_, i) =>
+      expect(getByTestId(`List-ListItem-${i}`)).toHaveAttribute(
+        'href',
+        props.to,
+      ),
     );
   });
 });

@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import ListItem from './ListItem';
 
@@ -10,6 +11,7 @@ jest.mock('@material-ui/core', () => ({
 const defaultProps = {
   src: 'PROP-src',
   text: 'PROP-text',
+  to: '/Link',
 };
 
 const setup = (overrides) => {
@@ -18,7 +20,11 @@ const setup = (overrides) => {
     ...overrides,
   };
   return {
-    ...render(<ListItem {...props} />),
+    ...render(
+      <Router>
+        <ListItem {...props} />
+      </Router>,
+    ),
     props,
   };
 };
@@ -37,5 +43,12 @@ describe('ListItem', () => {
       'src',
       props.src,
     );
+  });
+
+  it('Should render ListItem with appropriate href', () => {
+    const testId = 'Comp-ListItem';
+    const { getByTestId, props } = setup({ 'data-testid': testId });
+
+    expect(getByTestId(testId)).toHaveAttribute('href', props.to);
   });
 });
