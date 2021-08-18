@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout matches snapshot 1`] = `
+<div>
+  <div
+    class="Layout-root-5"
+  >
+    <div
+      class="Layout-header-6"
+    >
+      <h1
+        class="MuiTypography-root MuiTypography-h1"
+      >
+        Layout-title
+      </h1>
+    </div>
+    <main
+      class="Layout-flex-8"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1"
+      >
+        Layout-children-text
+      </p>
+    </main>
+  </div>
+</div>
+`;
