@@ -44,11 +44,4 @@ describe('ListItem', () => {
       props.src,
     );
   });
-
-  it('Should render ListItem with appropriate href', () => {
-    const testId = 'Comp-ListItem';
-    const { getByTestId, props } = setup({ 'data-testid': testId });
-
-    expect(getByTestId(testId)).toHaveAttribute('href', props.to);
-  });
 });
