@@ -21,7 +21,7 @@ const styles = (theme) => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     paddingBottom: theme.spacing(4),
-    maxWidth: 600,
+    maxWidth: 650,
     minHeight: '100vh',
   },
   header: {
