@@ -1,12 +1,6 @@
 import { render } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 import PersonCard from './PersonCard';
-
-jest.mock('@material-ui/core', () => ({
-  ...jest.requireActual('@material-ui/core'),
-  Avatar: (props) => <div {...props} />,
-}));
 
 const defaultProps = {
   firstName: 'PersonCard-firstName',
@@ -20,11 +14,7 @@ const setup = (overrides) => {
     ...overrides,
   };
   return {
-    ...render(
-      <Router>
-        <PersonCard {...props} />,
-      </Router>,
-    ),
+    ...render(<PersonCard {...props} />),
     props,
   };
 };
