@@ -7,7 +7,7 @@ https://frozen-wildwood-01402.herokuapp.com/
 
 ## Approach
 
-### Over all approach
+### Overall approach
 
 - First I drew a small wire frame of what i wanted the app to look like
 - Using that wireframe I identified different components that each of the pages should be broken down into
@@ -20,6 +20,7 @@ https://frozen-wildwood-01402.herokuapp.com/
   - Then put it all together on the actual page file
   - Then Cleaned up the CSS styling to put it all together
 - Next focused on the deployment of the application on Heroku creating a quick simple express server to serve the necessary files
+- Finally ended up using the Context API in order to ensure that the details page displayed the information for the proper person
 
 ### What features you implemented
 
