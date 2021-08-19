@@ -26,7 +26,6 @@ https://frozen-wildwood-01402.herokuapp.com/
 - Created a home page with a list of people showing their picture and their full names
   - Created this page with a general Layout component used on both pages, a List component and a ListItem component
 - Clicking on a list row will bring the user to the persons relevant details page with their picture, first and last name, and their phone number
-  - (Add a back button here??)
 
 ### Given more time, what else would you have liked to complete and how long would it have taken you?
 
@@ -49,7 +48,7 @@ https://frozen-wildwood-01402.herokuapp.com/
 - the boiler plate is using older versions of a lot of the libraries, it would be good to properly up them
 - i also dont love how the boilerplate was set up to use `.js` files. JSX should really only be used in `.jsx` files and `.js` files should only really have Javascript. I don't have a good reason really other than the newer standards are to use `.jsx` files wherever JSX is used, so it really just comes down to good practice and the fact that `.jsx` is more clear about what is actually inside the file.
 
-## Install
+## Install dependencies
 
 ```
 yarn install
@@ -63,6 +62,28 @@ yarn dev
 
 ## Deploying to Heroku
 
+### Install Heroku-CLI
+
+[more info here](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
+
 ```
-yarn build
+brew tap heroku/brew && brew install heroku
+```
+
+### Create Heroku app
+
+from this repo's root run the following
+
+```
+heroku create
+```
+
+This will also create a Heroku remote allowing you to push changes directly to your Heroku app. you will need to create a Heroku account as well, the CLI will provide instructions on this.
+
+### Deploying the app
+
+This will deploy the code for this app to the Heroku remote, it will also return the URL to your app
+
+```
+git push heroku main
 ```
