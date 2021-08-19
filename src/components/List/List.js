@@ -6,9 +6,9 @@ const List = ({ data }) => {
   return (
     <Paper elevation={4}>
       <MuiList>
-        {data.map(({ src = 'Hello-World', text = 'Hello-World' }, i) => (
+        {data.map(({ img, text }, i) => (
           <ListItem
-            src={src}
+            src={img}
             text={text}
             // eslint-disable-next-line react/no-array-index-key
             key={i}

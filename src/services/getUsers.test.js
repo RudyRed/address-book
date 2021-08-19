@@ -14,6 +14,11 @@ beforeEach(() => {
 describe('Event Data Service', () => {
   it('Return Users Data', async () => {
     const usersDataList = await getUsers();
-    expect(usersDataList).toEqual([{ text: 'brad gibson' }]);
+    expect(usersDataList).toEqual([
+      {
+        text: 'brad gibson',
+        img: 'https://randomuser.me/api/portraits/thumb/men/75.jpg',
+      },
+    ]);
   });
 });

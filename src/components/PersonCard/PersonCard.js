@@ -1,14 +1,17 @@
-import { Paper, Grid, Typography } from '@material-ui/core';
+import { Avatar, Grid, Paper, Typography, withStyles } from '@material-ui/core';
 
-const PersonCard = ({ firstName, lastName, phoneNumber }) => {
+const PersonCard = ({ classes, firstName, lastName, phoneNumber, img }) => {
   return (
-    <Paper elevation={4}>
+    <Paper elevation={4} className={classes.root}>
       <Grid
         container
         direction="column"
         alignItems="center"
         justifyContent="center"
       >
+        <Grid item>
+          <Avatar className={classes.avatar} sizes="large" src={img} />
+        </Grid>
         <Grid item>
           <Typography variant="h2">{firstName}</Typography>
         </Grid>
@@ -23,4 +26,14 @@ const PersonCard = ({ firstName, lastName, phoneNumber }) => {
   );
 };
 
-export default PersonCard;
+const styles = (theme) => ({
+  root: {
+    padding: theme.spacing(4),
+  },
+  avatar: {
+    width: 150,
+    height: 150,
+  },
+});
+
+export default withStyles(styles, { withTheme: true })(PersonCard);

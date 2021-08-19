@@ -12,5 +12,6 @@ export default async (index = 0) => {
     firstName: user.name.first,
     lastName: user.name.last,
     phoneNumber: user.phone,
+    img: user.picture.large,
   };
 };

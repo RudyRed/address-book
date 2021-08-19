@@ -12,7 +12,7 @@ const makeData = (num) => {
   return Array(num)
     .fill(0)
     .map((_, i) => ({
-      src: `ListItem-src-${i}`,
+      img: `ListItem-src-${i}`,
       text: `ListItem-text-${i}`,
     }));
 };

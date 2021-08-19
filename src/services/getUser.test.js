@@ -14,10 +14,12 @@ beforeEach(() => {
 describe('User Data Service', () => {
   it('Return User Data', async () => {
     const userDataList = await getUser();
+
     expect(userDataList).toEqual({
       firstName: 'brad',
       lastName: 'gibson',
       phoneNumber: '011-962-7516',
+      img: 'https://randomuser.me/api/portraits/men/75.jpg',
     });
   });
 });

@@ -6,7 +6,8 @@ export default async () => {
   );
   const parsedResponse = await response.json();
 
-  return parsedResponse.results.map(({ name }) => ({
+  return parsedResponse.results.map(({ name, picture }) => ({
     text: `${name.first} ${name.last}`,
+    img: picture.thumbnail,
   }));
 };
