@@ -1,4 +1,3 @@
-import T from 'prop-types';
 import {
   Avatar,
   ListItem as MuiListItem,
@@ -16,11 +15,6 @@ const ListItem = ({ src, text, to, ...props }) => {
       <ListItemText primary={text} />
     </MuiListItem>
   );
-};
-
-ListItem.propTypes = {
-  src: T.string.isRequired,
-  text: T.string.isRequired,
 };
 
 export default ListItem;
