@@ -1,27 +1,36 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { withStyles } from '@material-ui/core';
 
 import Layout from '../components/Layout/Layout';
 import PersonCard from '../components/PersonCard';
+import PersonContext from '../components/PersonContext';
 import { getUser } from '../services';
 
-const Details = ({ classes, match }) => {
-  const [user, setUser] = useState();
+const Details = ({ classes }) => {
+  const [person, setPerson] = useContext(PersonContext);
 
   useEffect(() => {
-    const getAndSetUser = async () => {
-      setUser(await getUser(match?.params.personId));
+    const getAndSetPerson = async () => {
+      setPerson(await getUser());
     };
 
-    getAndSetUser();
+    if (!person) {
+      // is details page is loaded directly so nothing in context
+      getAndSetPerson();
+    }
   }, []);
 
   return (
     <div className={classes.root}>
       <Helmet title="Details" />
       <Layout title="Details">
-        <PersonCard {...user} />
+        <PersonCard
+          firstName={person?.firstName}
+          lastName={person?.lastName}
+          phoneNumber={person?.phoneNumber}
+          img={person?.largePicture}
+        />
       </Layout>
     </div>
   );

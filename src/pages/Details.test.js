@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 
 import Details from './Details';
-import mockedGetUsers from './__mocks__/Home-getUsers.mock';
+import mockedGetUser from './__mocks__/Details-getUser.mock';
+import PersonContext from '../components/PersonContext';
 
 jest.mock('react-helmet-async', () => ({
   Helmet: () => <div />,
@@ -9,7 +10,7 @@ jest.mock('react-helmet-async', () => ({
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
-    json: () => Promise.resolve(mockedGetUsers),
+    json: () => Promise.resolve(mockedGetUser),
   }),
 );
 
@@ -17,12 +18,25 @@ beforeEach(() => {
   fetch.mockClear();
 });
 
-const setup = (overrides) => {
+const personContextData = {
+  largePicture: 'personContextData-largePicture',
+  firstName: 'personContextData-firstName',
+  lastName: 'personContextData-lastName',
+  phoneNumber: 'personContextData-phoneNumber',
+};
+
+const setContextMock = jest.fn();
+
+const setup = (overrides, initialProviderValue = personContextData) => {
   const props = {
     ...overrides,
   };
   return {
-    ...render(<Details />),
+    ...render(
+      <PersonContext.Provider value={[initialProviderValue, setContextMock]}>
+        <Details />
+      </PersonContext.Provider>,
+    ),
     props,
   };
 };
@@ -35,8 +49,15 @@ describe('Details', () => {
   });
 
   it('Should fetch and render user via PeopleCard', async () => {
-    const { findByText } = setup();
+    setup({}, null);
 
-    expect(await findByText('(64) 6431-7116')).toBeInTheDocument();
+    await waitFor(() =>
+      expect(setContextMock).toBeCalledWith({
+        firstName: 'Areta',
+        largePicture: 'https://randomuser.me/api/portraits/women/66.jpg',
+        lastName: 'Araújo',
+        phoneNumber: '(64) 6431-7116',
+      }),
+    );
   });
 });
