@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "React client-side app (SPA) boilerplate.",
   "main": "src/index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "test": "jest",
     "eslint": "eslint src webpack",
