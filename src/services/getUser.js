@@ -2,7 +2,9 @@ import { SEED } from './constants';
 
 export default async (index = 0) => {
   const response = await fetch(
-    `https://randomuser.me/api/?results=1&page=${index + 1}&seed=${SEED}`,
+    `https://randomuser.me/api/?results=1&page=${
+      index + 1
+    }&seed=${SEED}&inc=picture,name,phone`,
   );
   const parsedResponse = await response.json();
 
@@ -12,6 +14,6 @@ export default async (index = 0) => {
     firstName: user.name.first,
     lastName: user.name.last,
     phoneNumber: user.phone,
-    img: user.picture.large,
+    largePicture: user.picture.large,
   };
 };

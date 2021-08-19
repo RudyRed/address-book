@@ -19,7 +19,7 @@ describe('User Data Service', () => {
       firstName: 'brad',
       lastName: 'gibson',
       phoneNumber: '011-962-7516',
-      img: 'https://randomuser.me/api/portraits/men/75.jpg',
+      largePicture: 'https://randomuser.me/api/portraits/men/75.jpg',
     });
   });
 });

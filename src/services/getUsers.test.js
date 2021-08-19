@@ -16,8 +16,11 @@ describe('Event Data Service', () => {
     const usersDataList = await getUsers();
     expect(usersDataList).toEqual([
       {
-        text: 'brad gibson',
-        img: 'https://randomuser.me/api/portraits/thumb/men/75.jpg',
+        firstName: 'brad',
+        largePicture: 'https://randomuser.me/api/portraits/men/75.jpg',
+        lastName: 'gibson',
+        phoneNumber: '011-962-7516',
+        thumbnail: 'https://randomuser.me/api/portraits/thumb/men/75.jpg',
       },
     ]);
   });
