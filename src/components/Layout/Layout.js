@@ -1,4 +1,3 @@
-import React from 'react';
 import { Typography, withStyles } from '@material-ui/core';
 
 const Layout = ({ children, classes, title }) => {
