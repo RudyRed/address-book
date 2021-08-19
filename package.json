@@ -4,7 +4,7 @@
   "description": "React client-side app (SPA) boilerplate.",
   "main": "src/index.js",
   "engines": {
-    "node": "14.x"
+    "node": "12.x"
   },
   "scripts": {
     "test": "jest",

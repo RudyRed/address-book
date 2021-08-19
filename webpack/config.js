@@ -114,9 +114,9 @@ const getConfigPlugins = (mode, isProduction) => {
     return [
       ...plugins,
       new CleanWebpackPlugin(),
-      new CopyWebpackPlugin([
-        { from: publicPath, to: distPath, ignore: ['index.html'] },
-      ]),
+      new CopyWebpackPlugin({
+        patterns: [{ from: publicPath, to: distPath }],
+      }),
     ];
   }
 
