@@ -10,9 +10,8 @@
     "test": "jest",
     "eslint": "eslint src webpack",
     "dev": "webpack-dev-server --mode development --config webpack/config.js",
-    "start": "webpack-dev-server --mode development --config webpack/config.js",
     "build": "webpack --mode production --config webpack/config.js",
-    "heroku-prebuild": "npm install --dev"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,7 @@
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^13.2.1",
+    "express": "^4.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
