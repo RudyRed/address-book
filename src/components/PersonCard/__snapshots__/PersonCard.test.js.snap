@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonCard matches snapshot 1`] = `
+<div>
+  <div
+    class="MuiPaper-root MuiPaper-elevation4 MuiPaper-rounded"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-content-xs-center"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h2"
+        >
+          PersonCard-firstName
+        </h2>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h2"
+        >
+          PersonCard-lastName
+        </h2>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h2"
+        >
+          PersonCard-phoneNumber
+        </h2>
+      </div>
+    </div>
+  </div>
+  ,
+</div>
+`;
