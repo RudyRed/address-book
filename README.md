@@ -17,17 +17,17 @@ This is a pure React client-side app (SPA) boilerplate.
 ## Install
 
 ```
-npm i
+yarn install
 ```
 
 ## Run for dev
 
 ```
-npm run dev
+yarn start
 ```
 
 ## Build for production
 
 ```
-npm run build
+yarn build
 ```
