@@ -46,13 +46,12 @@ describe('List', () => {
   });
 
   it('Should render ListItems with appropriate to prop', () => {
-    const { getByTestId, props } = setup();
+    const { getAllByTestId, props } = setup();
 
-    props.data.forEach((_, i) =>
-      expect(getByTestId(`List-ListItem-${i}`)).toHaveAttribute(
-        'href',
-        props.to,
-      ),
+    const listItems = getAllByTestId('List-ListItems');
+
+    listItems.forEach((listItem) =>
+      expect(listItem).toHaveAttribute('href', props.to),
     );
   });
 });

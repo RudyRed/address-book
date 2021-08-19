@@ -13,7 +13,7 @@ const List = ({ data }) => {
             // eslint-disable-next-line react/no-array-index-key
             key={i}
             to={`/${i}`}
-            data-testid={`List-ListItem-${i}`}
+            data-testid="List-ListItems"
           />
         ))}
       </MuiList>
