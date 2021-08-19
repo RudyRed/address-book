@@ -2,21 +2,23 @@
 
 exports[`App matches snapshot 1`] = `
 <div>
-  <div>
+  <div
+    class="Home-root-7"
+  >
     <div
-      class="Layout-root-5"
+      class="Layout-root-8"
     >
       <div
-        class="Layout-header-6"
+        class="Layout-header-9"
       >
         <h1
-          class="MuiTypography-root MuiTypography-h1"
+          class="MuiTypography-root Layout-title-10 MuiTypography-h1"
         >
           Address Book
         </h1>
       </div>
       <main
-        class="Layout-flex-8"
+        class="Layout-flex-12"
       />
     </div>
   </div>

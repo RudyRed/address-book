@@ -5,7 +5,9 @@ const Layout = ({ children, classes, title }) => {
   return (
     <div className={classes.root}>
       <div className={classes.header}>
-        <Typography variant="h1">{title}</Typography>
+        <Typography variant="h1" className={classes.title}>
+          {title}
+        </Typography>
       </div>
       <main className={classes.flex}>{children}</main>
     </div>
@@ -18,11 +20,18 @@ const styles = (theme) => ({
     flexDirection: 'column',
     marginLeft: 'auto',
     marginRight: 'auto',
-    maxWidth: 750,
+    paddingBottom: theme.spacing(4),
+    maxWidth: 600,
     minHeight: '100vh',
   },
   header: {
-    margin: theme.spacing(2, 0, 1),
+    [theme.breakpoints.down('xs')]: {
+      margin: theme.spacing(2, 0, 1, 2),
+    },
+  },
+  title: {
+    color: 'white',
+    fontWeight: 600,
   },
   headerContainer: {
     display: 'flex',

@@ -3,19 +3,19 @@
 exports[`Layout matches snapshot 1`] = `
 <div>
   <div
-    class="Layout-root-5"
+    class="Layout-root-6"
   >
     <div
-      class="Layout-header-6"
+      class="Layout-header-7"
     >
       <h1
-        class="MuiTypography-root MuiTypography-h1"
+        class="MuiTypography-root Layout-title-8 MuiTypography-h1"
       >
         Layout-title
       </h1>
     </div>
     <main
-      class="Layout-flex-8"
+      class="Layout-flex-10"
     >
       <p
         class="MuiTypography-root MuiTypography-body1"

@@ -33,6 +33,10 @@ const styles = (theme) => ({
   avatar: {
     width: 150,
     height: 150,
+    [theme.breakpoints.down('xs')]: {
+      width: 100,
+      height: 100,
+    },
   },
 });
 
