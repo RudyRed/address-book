@@ -10,7 +10,7 @@
     "test": "jest",
     "eslint": "eslint src webpack",
     "dev": "webpack-dev-server --mode development --config webpack/config.js",
-    "start": "webpack --mode production --config webpack/config.js",
+    "start": "webpack-dev-server --mode development --config webpack/config.js",
     "build": "webpack --mode production --config webpack/config.js",
     "heroku-prebuild": "npm install --dev"
   },
